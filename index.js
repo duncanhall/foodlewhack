@@ -20,12 +20,7 @@ async function getNumResults(postCode) {
   }
 }
 
-const postCodes = postalAreas.reduce((seq, area) => seq.concat(area.range.map(i => `${area.code}${i}`)), []);
-const sequence = [];
+postalAreas
+  .reduce((seq, area) => seq.concat(area.range.map(i => `${area.code}${i}`)), [])
+  .forEach(code => getNumResults(code));
 
-postCodes.forEach(code => {
-  sequence.push(() => getNumResults(code));
-  sequence.push(() => sleep(10000));
-})
-
-await Promise.all(sequence);

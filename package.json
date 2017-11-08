@@ -9,6 +9,7 @@
   "author": "Duncan Hall <himself@duncanhall.net> (https://duncanhall.net)",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.17.0"
+    "axios": "^0.17.0",
+    "bluebird": "^3.5.1"
   }
 }
